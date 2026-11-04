@@ -5,56 +5,63 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0c0c0d">
-  <title>Calculateur TVA & Convertisseur FCFA - Afrique</title>
-  <meta name="description" content="Calculez facilement la TVA en Afrique francophone et convertissez vos devises (FCFA, Euro, Dollar) en temps réel.">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🧮%3C/text%3E%3C/svg%3E">
+  <title>Calculateur de TVA Mondial - HT ↔ TTC (Tous les pays)</title>
+  <meta name="description" content="Calculez facilement la TVA dans le monde entier. Convertissez un montant HT en TTC ou TTC en HT pour plus de 100 pays (Afrique, Europe, Amérique, Asie).">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌍%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="entete">
-    <div class="logo">🧮 <strong>Tech Outils Afrique</strong></div>
+    <div class="logo">🌍 <strong>TVA Mondial</strong></div>
     <nav class="menu">
-      <a href="#calculateur">TVA</a>
-      <a href="#convertisseur">FCFA</a>
-      <a href="#outils">Projets</a>
+      <a href="#calculateur">Calculatrice</a>
+      <a href="#convertisseur">Devises</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <main>
-    <!-- OUTIL 1 : CALCULATEUR TVA -->
+    <!-- OUTIL 1 : CALCULATEUR TVA MONDIAL -->
     <section id="calculateur" class="section-calculateur">
       <div class="texte-accueil">
-        <h1>Outils professionnels pour l'Afrique</h1>
-        <p>Gagnez du temps avec nos outils gratuits et précis.</p>
+        <h1>Calculateur de TVA Mondial</h1>
+        <p>Convertissez un montant HT ↔ TTC en un clic, pour presque tous les pays du monde.</p>
       </div>
 
-      <h2>1. Calculateur de TVA</h2>
       <div class="boite-outil">
         <div class="champ">
-          <label for="montant">Montant</label>
-          <input id="montant" type="number" inputmode="decimal" min="0" step="0.01" placeholder="Ex : 100000">
+          <label for="recherche-pays">🔍 Rechercher un pays</label>
+          <input type="text" id="recherche-pays" placeholder="Tapez le nom d'un pays (ex: France, RDC, USA...)">
         </div>
+
         <div class="champ">
-          <label for="pays">Pays</label>
-          <select id="pays"></select>
+          <label for="pays">Sélectionnez le pays</label>
+          <select id="pays" size="1"></select>
         </div>
+
+        <div class="champ">
+          <label for="montant">Montant</label>
+          <input id="montant" type="number" inputmode="decimal" min="0" step="0.01" placeholder="Ex : 1000" autocomplete="off">
+        </div>
+
         <div class="champ">
           <label for="taux">Taux de TVA (%)</label>
-          <input id="taux" type="number" inputmode="decimal" min="0" step="0.01" value="16">
+          <input id="taux" type="number" inputmode="decimal" min="0" step="0.01" value="20">
         </div>
+
         <fieldset class="champ modes">
           <legend>Type de conversion</legend>
           <label><input type="radio" name="mode" value="ht" checked> HT → TTC</label>
           <label><input type="radio" name="mode" value="ttc"> TTC → HT</label>
         </fieldset>
+
         <div id="resultat-tva" class="resultat" aria-live="polite"></div>
       </div>
     </section>
 
     <!-- OUTIL 2 : CONVERTISSEUR DE DEVISES -->
     <section id="convertisseur" class="section-grise">
-      <h2>2. Convertisseur de devises (FCFA)</h2>
+      <h2>Convertisseur de devises</h2>
       <div class="boite-outil">
         <div class="champ">
           <label for="montant-devise">Montant à convertir</label>
@@ -76,29 +83,7 @@
             <option value="USD">Dollar US ($)</option>
           </select>
         </div>
-        <div id="resultat-devise" class="resultat" aria-live="polite">Chargement des taux...</div>
-      </div>
-    </section>
-
-    <!-- SECTION OUTILS À VENIR -->
-    <section id="outils" class="section-calculateur">
-      <h2>Prochains outils en développement</h2>
-      <div class="grille">
-        <div class="carte-outil">
-          <h3>💰 Simulateur de salaire</h3>
-          <p>Calculez votre salaire net à partir du brut en Afrique.</p>
-          <span class="badge">Bientôt</span>
-        </div>
-        <div class="carte-outil">
-          <h3>🧾 Générateur de factures</h3>
-          <p>Créez des factures conformes et téléchargez-les en PDF.</p>
-          <span class="badge">Bientôt</span>
-        </div>
-        <div class="carte-outil">
-          <h3>🏦 Calculateur de prêt</h3>
-          <p>Simulez vos remboursements bancaires.</p>
-          <span class="badge">Bientôt</span>
-        </div>
+        <div id="resultat-devise" class="resultat" aria-live="polite">Chargement...</div>
       </div>
     </section>
 
@@ -108,16 +93,14 @@
       <p>Ce site est 100% gratuit. Si ces outils vous font gagner du temps, vous pouvez soutenir le projet !</p>
       <div class="actions-contact">
         <a href="https://wa.me/243967811702" class="btn btn-principal" target="_blank">💬 Me contacter sur WhatsApp</a>
-        <a href="#" class="btn btn-secondaire" target="_blank">☕ Faire un don</a>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>© <span id="annee"></span> Tech Outils Afrique. Tous droits réservés.</p>
-    <p><a href="confidentialite.html">Politique de confidentialité</a></p>
+    <p>© <span id="annee"></span> TVA Mondial. Tous droits réservés.</p>
   </footer>
 
   <script src="script.js" defer></script>
 </body>
-  </html>
+</html>

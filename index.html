@@ -4,103 +4,132 @@
   <meta name="google-site-verification" content="2Im5dlPeCxbYxjfc-2KMujdlEkKpxKUWcsmeDknGLmM" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0c0c0d">
-  <title>Calculateur de TVA Mondial - HT ↔ TTC (Tous les pays)</title>
-  <meta name="description" content="Calculez facilement la TVA dans le monde entier. Convertissez un montant HT en TTC ou TTC en HT pour plus de 100 pays (Afrique, Europe, Amérique, Asie).">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌍%3C/text%3E%3C/svg%3E">
+  <title>Tech Outils Afrique - Calculateurs & Convertisseurs Pros</title>
+  <meta name="description" content="La plateforme n°1 pour vos calculs financiers. Calculez la TVA, convertissez les devises, simulez un prêt ou un salaire en quelques clics.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🧮%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="entete">
-    <div class="logo">🌍 <strong>TVA Mondial</strong></div>
+    <div class="logo">🧮 <strong>Tech Outils Pro</strong></div>
     <nav class="menu">
-      <a href="#calculateur">Calculatrice</a>
-      <a href="#convertisseur">Devises</a>
+      <a href="#outils">Outils</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <main>
-    <!-- OUTIL 1 : CALCULATEUR TVA MONDIAL -->
-    <section id="calculateur" class="section-calculateur">
-      <div class="texte-accueil">
-        <h1>Calculateur de TVA Mondial</h1>
-        <p>Convertissez un montant HT ↔ TTC en un clic, pour presque tous les pays du monde.</p>
-      </div>
-
-      <div class="boite-outil">
-        <div class="champ">
-          <label for="recherche-pays">🔍 Rechercher un pays</label>
-          <input type="text" id="recherche-pays" placeholder="Tapez le nom d'un pays (ex: France, RDC, USA...)">
-        </div>
-
-        <div class="champ">
-          <label for="pays">Sélectionnez le pays</label>
-          <select id="pays" size="1"></select>
-        </div>
-
-        <div class="champ">
-          <label for="montant">Montant</label>
-          <input id="montant" type="number" inputmode="decimal" min="0" step="0.01" placeholder="Ex : 1000" autocomplete="off">
-        </div>
-
-        <div class="champ">
-          <label for="taux">Taux de TVA (%)</label>
-          <input id="taux" type="number" inputmode="decimal" min="0" step="0.01" value="20">
-        </div>
-
-        <fieldset class="champ modes">
-          <legend>Type de conversion</legend>
-          <label><input type="radio" name="mode" value="ht" checked> HT → TTC</label>
-          <label><input type="radio" name="mode" value="ttc"> TTC → HT</label>
-        </fieldset>
-
-        <div id="resultat-tva" class="resultat" aria-live="polite"></div>
-      </div>
+    <section class="hero">
+      <h1>Vos calculs financiers simplifiés</h1>
+      <p>Une suite d'outils gratuits, rapides et fiables pour les professionnels et les particuliers.</p>
     </section>
 
-    <!-- OUTIL 2 : CONVERTISSEUR DE DEVISES -->
-    <section id="convertisseur" class="section-grise">
-      <h2>Convertisseur de devises</h2>
-      <div class="boite-outil">
+    <!-- LES 5 OUTILS -->
+    <section id="outils" class="grille-outils">
+      
+      <!-- OUTIL 1 : TVA MONDIAL -->
+      <div class="carte-outil">
+        <h2>1. Calculateur de TVA Mondial</h2>
         <div class="champ">
-          <label for="montant-devise">Montant à convertir</label>
-          <input id="montant-devise" type="number" min="0" placeholder="Ex : 100" value="1">
+          <label>Pays</label>
+          <select id="pays"></select>
         </div>
         <div class="champ">
-          <label for="devise-source">Devise de départ</label>
+          <label>Montant</label>
+          <input id="montant-tva" type="number" placeholder="Ex : 1000">
+        </div>
+        <div class="champ">
+          <label>Taux (%)</label>
+          <input id="taux-tva" type="number" value="20">
+        </div>
+        <div id="res-tva" class="resultat">Résultat ici...</div>
+      </div>
+
+      <!-- OUTIL 2 : CONVERTISSEUR -->
+      <div class="carte-outil">
+        <h2>2. Convertisseur de Devises</h2>
+        <div class="champ">
+          <label>Montant</label>
+          <input id="montant-devise" type="number" value="100">
+        </div>
+        <div class="champ">
+          <label>De</label>
           <select id="devise-source">
             <option value="EUR">Euro (€)</option>
-            <option value="USD">Dollar US ($)</option>
-            <option value="XOF">FCFA (XOF/XAF)</option>
+            <option value="USD">Dollar ($)</option>
+            <option value="XOF">FCFA</option>
           </select>
         </div>
         <div class="champ">
-          <label for="devise-cible">Devise d'arrivée</label>
+          <label>Vers</label>
           <select id="devise-cible">
-            <option value="XOF">FCFA (XOF/XAF)</option>
+            <option value="XOF">FCFA</option>
             <option value="EUR">Euro (€)</option>
-            <option value="USD">Dollar US ($)</option>
+            <option value="USD">Dollar ($)</option>
           </select>
         </div>
-        <div id="resultat-devise" class="resultat" aria-live="polite">Chargement...</div>
+        <div id="res-devise" class="resultat">Chargement...</div>
       </div>
+
+      <!-- OUTIL 3 : POURCENTAGE -->
+      <div class="carte-outil">
+        <h2>3. Calculateur de Pourcentage</h2>
+        <div class="champ">
+          <label>Combien fait X % de Y ?</label>
+          <div style="display:flex; gap:10px;">
+            <input id="pourcent-x" type="number" placeholder="X (%)">
+            <input id="pourcent-y" type="number" placeholder="Y (Total)">
+          </div>
+        </div>
+        <div id="res-pourcent" class="resultat">Résultat ici...</div>
+      </div>
+
+      <!-- OUTIL 4 : SIMULATEUR DE PRÊT -->
+      <div class="carte-outil">
+        <h2>4. Simulateur de Prêt</h2>
+        <div class="champ">
+          <label>Montant du prêt</label>
+          <input id="pret-montant" type="number" placeholder="Ex : 1000000">
+        </div>
+        <div class="champ">
+          <label>Taux d'intérêt annuel (%)</label>
+          <input id="pret-taux" type="number" placeholder="Ex : 5">
+        </div>
+        <div class="champ">
+          <label>Durée (en mois)</label>
+          <input id="pret-duree" type="number" placeholder="Ex : 12">
+        </div>
+        <div id="res-pret" class="resultat">Résultat ici...</div>
+      </div>
+
+      <!-- OUTIL 5 : SALAIRE NET -->
+      <div class="carte-outil">
+        <h2>5. Salaire Brut vers Net (Estimation)</h2>
+        <p style="font-size:0.8rem; color:#666; margin-bottom:10px;">(Basé sur une estimation moyenne de 20% de charges)</p>
+        <div class="champ">
+          <label>Salaire Brut</label>
+          <input id="salaire-brut" type="number" placeholder="Ex : 500000">
+        </div>
+        <div id="res-salaire" class="resultat">Résultat ici...</div>
+      </div>
+
     </section>
 
-    <!-- SECTION CONTACT -->
+    <!-- ESPACE PUBLICITÉ (Pour gagner de l'argent plus tard) -->
+    <section class="pub">
+      <p>Espace publicitaire (Google AdSense)</p>
+    </section>
+
     <section id="contact" class="section-contact">
-      <h2>Besoin d'aide ou envie de soutenir ?</h2>
-      <p>Ce site est 100% gratuit. Si ces outils vous font gagner du temps, vous pouvez soutenir le projet !</p>
-      <div class="actions-contact">
-        <a href="https://wa.me/243967811702" class="btn btn-principal" target="_blank">💬 Me contacter sur WhatsApp</a>
-      </div>
+      <h2>Une question ?</h2>
+      <a href="https://wa.me/243967811702" class="btn btn-principal" target="_blank">💬 Me contacter sur WhatsApp</a>
     </section>
   </main>
 
   <footer>
-    <p>© <span id="annee"></span> TVA Mondial. Tous droits réservés.</p>
+    <p>© <span id="annee"></span> Tech Outils Pro. Tous droits réservés.</p>
   </footer>
 
   <script src="script.js" defer></script>
 </body>
-</html>
+                                  </html>

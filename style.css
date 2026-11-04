@@ -1,18 +1,19 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --bg: #f4f4f9;
-  --text: #1a1a1a;
+  --bg: #f8fafc;
+  --text: #1e293b;
   --card: #ffffff;
-  --border: #e0e0e0;
-  --accent: #2563eb;
-  --accent-hover: #1d4ed8;
+  --border: #e2e8f0;
+  --accent: #3b82f6;
 }
 body {
   background-color: var(--bg);
   color: var(--text);
   font-family: system-ui, -apple-system, sans-serif;
-  line-height: 1.6;
+  line-height: 1.5;
 }
+
+/* EN-TÊTE */
 .entete {
   background: var(--card);
   padding: 16px 24px;
@@ -20,78 +21,71 @@ body {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid var(--border);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  position: sticky; top: 0; z-index: 100;
 }
-.logo { font-size: 1.2rem; }
-.menu a {
-  color: var(--text);
-  text-decoration: none;
-  margin-left: 15px;
-  font-weight: 500;
-  font-size: 0.9rem;
+.menu a { color: var(--text); text-decoration: none; margin-left: 20px; font-weight: 600; }
+
+/* HERO */
+.hero { text-align: center; padding: 40px 20px; }
+.hero h1 { font-size: 2.2rem; margin-bottom: 10px; }
+.hero p { color: #64748b; font-size: 1.1rem; }
+
+/* GRILLE D'OUTILS */
+.grille-outils {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
-.menu a:hover { color: var(--accent); }
 
-main { max-width: 800px; margin: 0 auto; }
-section { padding: 40px 20px; }
-h1 { font-size: 2rem; margin-bottom: 10px; color: #111; text-align: center; }
-h2 { font-size: 1.5rem; margin-bottom: 20px; text-align: center; }
-.texte-accueil { text-align: center; margin-bottom: 30px; color: #555; }
-
-.boite-outil {
+.carte-outil {
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 30px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-  max-width: 500px;
-  margin: 0 auto;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
 }
-.champ { margin-bottom: 20px; }
-.champ label { display: block; margin-bottom: 8px; font-weight: 600; }
+.carte-outil h2 { font-size: 1.2rem; margin-bottom: 15px; color: #0f172a; border-bottom: 2px solid var(--accent); padding-bottom: 8px; }
+
+/* CHAMPS */
+.champ { margin-bottom: 12px; }
+.champ label { display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 4px; }
 input, select {
   width: 100%;
-  padding: 14px;
+  padding: 10px;
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 6px;
   font-size: 1rem;
-  background: #fafafa;
 }
-input:focus, select:focus { outline: none; border-color: var(--accent); background: #fff; }
-.modes { border: none; }
-.modes label { display: inline-block; margin-right: 20px; font-weight: normal; }
-.modes input { width: auto; margin-right: 8px; }
+input:focus, select:focus { outline: 2px solid var(--accent); border-color: transparent; }
+
+/* RÉSULTATS */
 .resultat {
   background: #eff6ff;
-  border: 1px solid #bfdbfe;
-  border-radius: 8px;
-  padding: 20px;
+  border-left: 4px solid var(--accent);
+  padding: 12px;
+  margin-top: auto;
+  border-radius: 4px;
   font-size: 1.1rem;
-  margin-top: 20px;
+  color: #1e3a8a;
 }
-.resultat strong { color: var(--accent); }
 
-.section-grise { background: #eef2f6; }
-.section-contact { text-align: center; background: white;}
-.section-contact p { margin-bottom: 20px; color: #555; }
-.actions-contact { display: flex; justify-content: center; }
-.btn {
-  display: inline-block;
-  padding: 14px 24px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-}
-.btn-principal { background: #25D366; color: white; }
-.btn-principal:hover { background: #1ebe57; }
-
-footer {
+/* PUB */
+.pub {
   text-align: center;
-  padding: 30px;
-  border-top: 1px solid var(--border);
-  color: #777;
-  font-size: 0.9rem;
-  background: var(--card);
+  padding: 40px;
+  background: #f1f5f9;
+  border: 2px dashed #cbd5e1;
+  margin: 40px 20px;
+  color: #94a3b8;
+  border-radius: 8px;
 }
+
+/* CONTACT */
+.section-contact { text-align: center; padding: 40px 20px; }
+.btn { display: inline-block; padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: bold; color: white; background: #25D366; margin-top: 15px;}
+footer { text-align: center; padding: 20px; color: #94a3b8; border-top: 1px solid var(--border); margin-top: 40px;}

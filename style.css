@@ -130,3 +130,13 @@ footer {
 }
 footer a { color: #777; text-decoration: underline; }
 footer a:hover { color: var(--accent); }
+.menu a {
+  font-size: 0.9rem;
+  margin-left: 10px;
+}
+@media (min-width: 600px) {
+  .menu a {
+    font-size: 1rem;
+    margin-left: 20px;
+  }
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simulateur de Prêt RDC - Calculez vos mensualités (CDF/USD)</title>
+  <meta name="description" content="Calculez facilement les mensualités de votre prêt bancaire en République Démocratique du Congo. Simulateur gratuit et rapide.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="entete">
+    <div class="logo">🧮 <strong>Tech Outils Pro</strong></div>
+    <nav class="menu">
+      <a href="index.html">← Tous les outils</a>
+    </nav>
+  </header>
+
+  <main style="padding: 20px; max-width: 600px; margin: auto;">
+    <section class="carte-outil">
+      <h1>Simulateur de Prêt en RDC</h1>
+      <p style="margin-bottom: 20px; color: #555;">Estimez le coût de votre crédit immobilier ou à la consommation en Francs Congolais (CDF) ou en Dollars (USD).</p>
+      
+      <div class="champ">
+        <label>Montant du prêt (CDF/USD)</label>
+        <input id="pret-montant" type="number" placeholder="Ex : 5000000">
+      </div>
+      <div class="champ">
+        <label>Taux d'intérêt annuel (%)</label>
+        <input id="pret-taux" type="number" placeholder="Ex : 8" value="8">
+      </div>
+      <div class="champ">
+        <label>Durée (en mois)</label>
+        <input id="pret-duree" type="number" placeholder="Ex : 24" value="24">
+      </div>
+      <div id="res-pret" class="resultat">Remplissez les champs ci-dessus.</div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="annee"></span> Tech Outils Pro. <a href="index.html" style="color:#3b82f6;">Retour à l'accueil</a></p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
